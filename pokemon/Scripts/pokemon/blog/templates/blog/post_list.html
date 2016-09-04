@@ -1,0 +1,12 @@
+{%extends 'blog/base.html'%}
+{%block content%}
+    {%for a_monster in Monsters%}
+        <div class="panel panel-default text-center">
+            <div class="panel-body">
+                <h2>編號:{{a_monster.pokemon_id}}</h2>
+                <h1><a href="{% url 'post_detail' pk=a_monster.pk%}">{{a_monster.name}}</a></h1>
+                <h3>屬性:{{a_monster.type}}</h3>
+            </div>
+        </div>
+    {%endfor%}
+{%endblock content%}

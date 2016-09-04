@@ -1,0 +1,10 @@
+{%extends 'blog/base.html'%}
+{%block content%}
+    <h2>怪獸編號:{{monster.pokemon_id}}</h2>
+    <h1>怪獸名稱:{{monster.name}}</h1>
+    <h3>怪獸屬性:{{monster.type}}</h3>
+    <h3>怪獸介紹:{{monster.content}}</h3>
+    <h4>最後編輯時間:{{monster.published_date}}</h4>
+    <a class="btn btn-info" href="{%url 'post_edit' pk=monster.pk %}"><h3>編輯</h3></a>
+    <a class="btn btn-danger" href="{%url 'post_delete' pk=monster.pk %}"><h3>刪除</h3></a>
+{%endblock content%}

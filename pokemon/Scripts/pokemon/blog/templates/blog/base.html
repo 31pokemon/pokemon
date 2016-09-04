@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>My Pokédex</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+
+	<div class="page-header">
+		<h1><a href="/">My Pokédex</a></h1>
+	</div>
+
+	<div class="content">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+                <div class="post">
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text }}</p>
+                </div>
+            {% endblock %}
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn btn-info" href="new/"><h2>新增神奇寶貝!</h2></a>
+        </div>
+    </div>
+</div>
+    </body>
+</html>
